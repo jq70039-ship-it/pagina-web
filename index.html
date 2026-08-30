@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta name="theme-color" content="#0B0B0B">
+  <title>NOIR — Tattoo Studio</title>
+  <link rel="preconnect" href="https://images.pexels.com">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="frame header-inner">
+    <a href="#inicio" class="logo">
+      <span>NOIR</span>
+      <small>TATTOO STUDIO</small>
+    </a>
+
+    <nav class="nav" id="nav">
+      <a href="#inicio">Inicio</a>
+      <a href="#estilos">Estilos</a>
+      <a href="#galeria">Galería</a>
+      <a href="#estudio">Estudio</a>
+      <a href="#reserva">Reserva</a>
+    </nav>
+
+    <a class="booking-button" href="#reserva">Reservar</a>
+    <button class="menu-mobile" id="menuButton" aria-label="Abrir menú">☰</button>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero" id="inicio">
+    <div class="hero-image"></div>
+    <div class="hero-overlay"></div>
+
+    <div class="frame hero-content reveal">
+      <p class="eyebrow">THE ART OF PERMANENT EXPRESSION</p>
+      <h1>Tatuajes contemporáneos <span>para cuerpos reales.</span></h1>
+      <p class="hero-text">
+        Blackwork, Fine Line, Ornamental y composiciones contemporáneas
+        que siguen la anatomía natural del cuerpo.
+      </p>
+      <a href="#reserva" class="text-button">RESERVAR CITA <span>→</span></a>
+    </div>
+
+    <div class="hero-side" aria-hidden="true">
+      <span>FOLLOW</span><div></div>
+      <a href="#blackwork-gallery">01</a>
+      <a href="#fine-line-gallery">02</a>
+      <a href="#ornamental-gallery">03</a>
+      <a href="#sigil-gallery">04</a>
+    </div>
+  </section>
+
+  <!-- MANIFESTO -->
+  <section class="manifesto">
+    <div class="frame manifesto-grid reveal">
+      <div class="section-index">
+        <span>01</span><div></div><small>NOIR PHILOSOPHY</small>
+      </div>
+
+      <div class="manifesto-content">
+        <p class="eyebrow dark">IDENTIDAD SOBRE TENDENCIAS</p>
+        <h2>Un tatuaje no termina cuando se apaga la máquina.</h2>
+        <p>
+          Cada pieza se piensa para convivir con la anatomía. La línea,
+          la sombra, el vacío y el movimiento tienen la misma importancia.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- STYLES -->
+  <section class="styles" id="estilos">
+    <div class="frame section-heading reveal">
+      <p class="eyebrow">02 — OUR SPECIALTIES</p>
+      <h2>Elige la forma en que quieres permanecer.</h2>
+    </div>
+
+    <!-- BLACKWORK -->
+    <article class="style-block blackwork">
+      <div class="style-image image-blackwork parallax"></div>
+      <div class="style-content">
+        <div class="content-frame reveal">
+          <p class="style-number">01</p>
+          <p class="style-label">BLACKWORK</p>
+          <h3>Oscuridad con estructura.</h3>
+          <p>
+            Contrastes intensos, masas negras y composiciones construidas
+            para crear presencia y ritmo sobre la piel.
+          </p>
+          <a href="#blackwork-gallery">EXPLORAR BLACKWORK <span>↓</span></a>
+        </div>
+      </div>
+    </article>
+
+    <!-- FINE LINE -->
+    <article class="style-block fine-line">
+      <div class="style-content">
+        <div class="content-frame reveal">
+          <p class="style-number">02</p>
+          <p class="style-label">FINE LINE</p>
+          <h3>La fuerza de lo delicado.</h3>
+          <p>
+            Líneas finas, composición ligera, botánica y detalles que respetan
+            el movimiento natural del cuerpo.
+          </p>
+          <a href="#fine-line-gallery">EXPLORAR FINE LINE <span>↓</span></a>
+        </div>
+      </div>
+      <div class="style-image image-fineline parallax"></div>
+    </article>
+
+    <!-- ORNAMENTAL -->
+    <article class="style-block ornamental">
+      <div class="style-image image-ornamental parallax"></div>
+      <div class="style-content">
+        <div class="content-frame reveal">
+          <p class="style-number">03</p>
+          <p class="style-label">ORNAMENTAL</p>
+          <h3>Ritmo, simetría y piel.</h3>
+          <p>
+            Geometría, repetición y estructuras ornamentales que encuentran
+            su lugar siguiendo la anatomía.
+          </p>
+          <a href="#ornamental-gallery">EXPLORAR ORNAMENTAL <span>↓</span></a>
+        </div>
+      </div>
+    </article>
+
+    <!-- CONTEMPORARY BODY FLOW -->
+    <article class="style-block sigilism">
+      <div class="style-content">
+        <div class="content-frame reveal">
+          <p class="style-number">04</p>
+          <p class="style-label">NEO MODERN / BODY FLOW</p>
+          <h3>Líneas que siguen el cuerpo.</h3>
+          <p>
+            Un lenguaje contemporáneo inspirado en sigilos, abstracción,
+            geometría y composiciones que fluyen con la forma del cuerpo.
+          </p>
+          <a href="#sigil-gallery">EXPLORAR BODY FLOW <span>↓</span></a>
+        </div>
+      </div>
+      <div class="style-image image-sigil parallax"></div>
+    </article>
+  </section>
+
+  <!-- GENERAL GALLERY -->
+  <section class="gallery" id="galeria">
+    <div class="frame">
+      <div class="gallery-header reveal">
+        <div>
+          <p class="eyebrow dark">03 — SELECTED WORK</p>
+          <h2>Trabajo reciente.</h2>
+        </div>
+        <p>
+          Una selección editorial. Cada fotografía puede abrirse y explorarse
+          sin salir de la página.
+        </p>
+      </div>
+
+      <div class="gallery-grid reveal">
+        <button class="gallery-card gallery-1 lightbox-trigger" data-src="https://images.pexels.com/photos/14565781/pexels-photo-14565781.jpeg?auto=compress&cs=tinysrgb&w=1600" data-alt="Trabajo Blackwork"><span>BLACKWORK / 01</span></button>
+        <button class="gallery-card gallery-2 lightbox-trigger" data-src="https://images.pexels.com/photos/9356536/pexels-photo-9356536.jpeg?auto=compress&cs=tinysrgb&w=1600" data-alt="Trabajo Fine Line"><span>FINE LINE / 02</span></button>
+        <button class="gallery-card gallery-3 lightbox-trigger" data-src="https://images.pexels.com/photos/4096103/pexels-photo-4096103.jpeg?auto=compress&cs=tinysrgb&w=1600" data-alt="Trabajo Ornamental"><span>ORNAMENTAL / 03</span></button>
+        <button class="gallery-card gallery-4 lightbox-trigger" data-src="https://images.pexels.com/photos/8349189/pexels-photo-8349189.jpeg?auto=compress&cs=tinysrgb&w=1600" data-alt="Trabajo Body Flow"><span>BODY FLOW / 04</span></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLACKWORK GALLERY -->
+  <section class="style-gallery dark-gallery" id="blackwork-gallery">
+    <div class="frame">
+      <div class="style-gallery-head reveal">
+        <div><p class="eyebrow">BLACKWORK — PORTFOLIO</p><h2>Explora Blackwork.</h2></div>
+        <p>10 imágenes para recorrer en secuencia. Haz clic en cualquier pieza para verla en grande.</p>
+      </div>
+
+      <div class="scroll-hint reveal"><span>DESLIZA</span><div></div><span>→</span></div>
+
+      <div class="photo-rail reveal">
+        <button class="portfolio-photo lightbox-trigger" data-src="https://images.pexels.com/photos/20519298/pexels-photo-20519298.jpeg?auto=compress&cs=tinysrgb&w=1600" data-alt="Blackwork 01"><img loading="lazy" src="https://images.pexels.com/photos/20519298/pexels-photo-20519298.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Blackwork tattoo 01"><span>01</span></button>
+        <button class="portfolio-photo lightbox-trigger" data-src="https://images.pexels.com/photos/35833285/pexels-photo-35833285.jpeg?auto=compress&cs=tinysrgb&w=1600" data-alt="Blackwork 02"><img loading="lazy" src="https://images.pexels.com/photos/35833285/pexels-photo-35833285.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Blackwork tattoo 02"><span>02</span></button>
+        <button class="portfolio-photo lightbox-trigger" data-src="https://images.pexels.com/photos/8349203/pexels-photo-8349203.jpeg?auto=compress&cs=tinysrgb&w=1600" data-alt="Blackwork 03"><img loading="lazy" src="https://images.pexels.com/photos/8349203/pexels-photo-8349203.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Blackwork tattoo 03"><span>03</span></button>
+        <button class="portfolio-photo lightbox-trigger" data-src="https://images.pexels.com/photos/14565781/pexels-photo-14565781.jpeg?auto=compress&cs=tinysrgb&w=1600" data-alt="Blackwork 04"><img loading="lazy" src="https://images.pexels.com/photos/14565781/pexels-photo-14565781.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Blackwork tattoo 04"><span>04</span></button>
+        <button class="portfolio-photo lightbox-trigger" data-src="https://images.pexels.com/photos/15303270/pexels-photo-15303270.jpeg?auto=compress&cs=tinysrgb&w=1600" data-alt="Blackwork 05"><img loading="lazy" src="https://images.pexels.com/photos/15303270/pexels-photo-15303270.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Blackwork tattoo 05"><span>05</span></button>
+        <button class="portfolio-photo lightbox-trigger" data-src="https://images.pexels.com/photos/8349196/pexels-photo-8349196.jpeg?auto=compress&cs=tinysrgb&w=1600" data-alt="Blackwork 06"><img loading="lazy" src="https://images.pexels.com/photos/8349196/pexels-photo-8349196.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Blackwork tattoo 06"><span>06</span></button>
+        <button class="portfolio-photo lightbox-trigger" data-src="https://images.pexels.com/photos/17972849/pexels-photo-17972849.jpeg?auto=compress&cs=tinysrgb&w=1600" data-alt="Blackwork 07"><img loading="lazy" src="https://images.pexels.com/photos/17972849/pexels-photo-17972849.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Blackwork tattoo 07"><span>07</span></button>
+        <button class="portfolio-photo lightbox-trigger" data-src="https://images.pexels.com/photos/325152/pexels-photo-325152.jpeg?auto=compress&cs=tinysrgb&w=1600" data-alt="Blackwork 08"><img loading="lazy" src="https://images.pexels.com/photos/325152/pexels-photo-325152.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Blackwork tattoo 08"><span>08</span></button>
+        <button class="portfolio-photo lightbox-trigger" data-src="https://images.pexels.com/photos/29251836/pexels-photo-29251836.jpeg?auto=compress&cs=tinysrgb&w=1600" data-alt="Blackwork 09"><img loading="lazy" src="https://images.pexels.com/photos/29251836/pexels-photo-29251836.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Blackwork tattoo 09"><span>09</span></button>
+        <button class="portfolio-photo lightbox-trigger" data-src="https://images.pexels.com/photos/4125588/pexels-photo-4125588.jpeg?auto=compress&cs=tinysrgb&w=1600" data-alt="Blackwork 10"><img loading="lazy" src="https://images.pexels.com/photos/4125588/pexels-photo-4125588.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Blackwork tattoo 10"><span>10</span></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINE LINE GALLERY -->
+  <section class="style-gallery light-gallery" id="fine-line-gallery">
+    <div class="frame">
+      <div class="style-gallery-head reveal">
+        <div><p class="eyebrow dark">FINE LINE — PORTFOLIO</p><h2>Explora Fine Line.</h2></div>
+        <p>Delicadeza, botánica y líneas limpias en un recorrido visual horizontal.</p>
+      </div>
+
+      <div class="scroll-hint dark reveal"><span>DESLIZA</span><div></div><span>→</span></div>
+
+      <div class="photo-rail reveal">
+        <button class="portfolio-photo lightbox-trigger" data-src="https://images.pexels.com/photos/9356536/pexels-photo-9356536.jpeg?auto=compress&cs=tinysrgb&w=1600" data-alt="Fine Line 01"><img loading="lazy" src="https://images.pexels.com/photos/9356536/pexels-photo-9356536.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Fine line tattoo 01"><span>01</span></button>
+        <button class="portfolio-photo lightbox-trigger" data-src="https://images.pexels.com/photos/9079557/pexels-photo-9079557.jpeg?auto=compress&cs=tinysrgb&w=1600" data-alt="Fine Line 02"><img loading="lazy" src="https://images.pexels.com/photos/9079557/pexels-photo-9079557.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Fine line tattoo 02"><span>02</span></button>
+        <button class="portfolio-photo lightbox-trigger" data-src="https://images.pexels.com/photos/19596896/pexels-photo-19596896.jpeg?auto=compress&cs=tinysrgb&w=1600" data-alt="Fine Line 03"><img loading="lazy" src="https://images.pexels.com/photos/19596896/pexels-photo-19596896.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Fine line tattoo 03"><span>03</span></button>
+        <button class="portfolio-photo lightbox-trigger" data-src="https://images.pexels.com/photos/13431878/pexels-photo-13431878.jpeg?auto=compress&cs=tinysrgb&w=1600" data-alt="Fine Line 04"><img loading="lazy" src="https://images.pexels.com/photos/13431878/pexels-photo-13431878.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Fine line tattoo 04"><span>04</span></button>
+        <button class="portfolio-photo lightbox-trigger" data-src="https://images.pexels.com/photos/13578476/pexels-photo-13578476.jpeg?auto=compress&cs=tinysrgb&w=1600" data-alt="Fine Line 05"><img loading="lazy" src="https://images.pexels.com/photos/13578476/pexels-photo-13578476.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Fine line tattoo 05"><span>05</span></button>
+        <button class="portfolio-photo lightbox-trigger" data-src="https://images.pexels.com/photos/7548023/pexels-photo-7548023.jpeg?auto=compress&cs=tinysrgb&w=1600" data-alt="Fine Line 06"><img loading="lazy" src="https://images.pexels.com/photos/7548023/pexels-photo-7548023.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Fine line tattoo 06"><span>06</span></button>
+        <button class="portfolio-photo lightbox-trigger" data-src="https://images.pexels.com/photos/2255663/pexels-photo-2255663.jpeg?auto=compress&cs=tinysrgb&w=1600" data-alt="Fine Line 07"><img loading="lazy" src="https://images.pexels.com/photos/2255663/pexels-photo-2255663.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Fine line tattoo 07"><span>07</span></button>
+        <button class="portfolio-photo lightbox-trigger" data-src="https://images.pexels.com/photos/3295586/pexels-photo-3295586.jpeg?auto=compress&cs=tinysrgb&w=1600" data-alt="Fine Line 08"><img loading="lazy" src="https://images.pexels.com/photos/3295586/pexels-photo-3295586.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Fine line tattoo 08"><span>08</span></button>
+        <button class="portfolio-photo lightbox-trigger" data-src="https://images.pexels.com/photos/8997750/pexels-photo-8997750.jpeg?auto=compress&cs=tinysrgb&w=1600" data-alt="Fine Line 09"><img loading="lazy" src="https://images.pexels.com/photos/8997750/pexels-photo-8997750.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Fine line tattoo 09"><span>09</span></button>
+        <button class="portfolio-photo lightbox-trigger" data-src="https://images.pexels.com/photos/8187555/pexels-photo-8187555.jpeg?auto=compress&cs=tinysrgb&w=1600" data-alt="Fine Line 10"><img loading="lazy" src="https://images.pexels.com/photos/8187555/pexels-photo-8187555.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Fine line tattoo 10"><span>10</span></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ORNAMENTAL GALLERY -->
+  <section class="style-gallery ornamental-gallery" id="ornamental-gallery">
+    <div class="frame">
+      <div class="style-gallery-head reveal">
+        <div><p class="eyebrow">ORNAMENTAL — PORTFOLIO</p><h2>Explora Ornamental.</h2></div>
+        <p>Patrones, simetría y composición corporal en una secuencia de diez piezas.</p>
+      </div>
+
+      <div class="scroll-hint reveal"><span>DESLIZA</span><div></div><span>→</span></div>
+
+      <div class="photo-rail reveal">
+        <button class="portfolio-photo lightbox-trigger" data-src="https://images.pexels.com/photos/5366118/pexels-photo-5366118.jpeg?auto=compress&cs=tinysrgb&w=1600" data-alt="Ornamental 01"><img loading="lazy" src="https://images.pexels.com/photos/5366118/pexels-photo-5366118.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Ornamental tattoo 01"><span>01</span></button>
+        <button class="portfolio-photo lightbox-trigger" data-src="https://images.pexels.com/photos/3851326/pexels-photo-3851326.jpeg?auto=compress&cs=tinysrgb&w=1600" data-alt="Ornamental 02"><img loading="lazy" src="https://images.pexels.com/photos/3851326/pexels-photo-3851326.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Ornamental tattoo 02"><span>02</span></button>
+        <button class="portfolio-photo lightbox-trigger" data-src="https://images.pexels.com/photos/12562858/pexels-photo-12562858.jpeg?auto=compress&cs=tinysrgb&w=1600" data-alt="Ornamental 03"><img loading="lazy" src="https://images.pexels.com/photos/12562858/pexels-photo-12562858.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Ornamental tattoo 03"><span>03</span></button>
+        <button class="portfolio-photo lightbox-trigger" data-src="https://images.pexels.com/photos/7005799/pexels-photo-7005799.jpeg?auto=compress&cs=tinysrgb&w=1600" data-alt="Ornamental 04"><img loading="lazy" src="https://images.pexels.com/photos/7005799/pexels-photo-7005799.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Ornamental tattoo 04"><span>04</span></button>
+        <button class="portfolio-photo lightbox-trigger" data-src="https://images.pexels.com/photos/28702080/pexels-photo-28702080.jpeg?auto=compress&cs=tinysrgb&w=1600" data-alt="Ornamental 05"><img loading="lazy" src="https://images.pexels.com/photos/28702080/pexels-photo-28702080.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Ornamental tattoo 05"><span>05</span></button>
+        <button class="portfolio-photo lightbox-trigger" data-src="https://images.pexels.com/photos/4096103/pexels-photo-4096103.jpeg?auto=compress&cs=tinysrgb&w=1600" data-alt="Ornamental 06"><img loading="lazy" src="https://images.pexels.com/photos/4096103/pexels-photo-4096103.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Ornamental tattoo 06"><span>06</span></button>
+        <button class="portfolio-photo lightbox-trigger" data-src="https://images.pexels.com/photos/7005787/pexels-photo-7005787.jpeg?auto=compress&cs=tinysrgb&w=1600" data-alt="Ornamental 07"><img loading="lazy" src="https://images.pexels.com/photos/7005787/pexels-photo-7005787.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Ornamental tattoo 07"><span>07</span></button>
+        <button class="portfolio-photo lightbox-trigger" data-src="https://images.pexels.com/photos/3851372/pexels-photo-3851372.jpeg?auto=compress&cs=tinysrgb&w=1600" data-alt="Ornamental 08"><img loading="lazy" src="https://images.pexels.com/photos/3851372/pexels-photo-3851372.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Ornamental tattoo 08"><span>08</span></button>
+        <button class="portfolio-photo lightbox-trigger" data-src="https://images.pexels.com/photos/3851330/pexels-photo-3851330.jpeg?auto=compress&cs=tinysrgb&w=1600" data-alt="Ornamental 09"><img loading="lazy" src="https://images.pexels.com/photos/3851330/pexels-photo-3851330.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Ornamental tattoo 09"><span>09</span></button>
+        <button class="portfolio-photo lightbox-trigger" data-src="https://images.pexels.com/photos/5410610/pexels-photo-5410610.jpeg?auto=compress&cs=tinysrgb&w=1600" data-alt="Ornamental 10"><img loading="lazy" src="https://images.pexels.com/photos/5410610/pexels-photo-5410610.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Ornamental tattoo 10"><span>10</span></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- BODY FLOW / NEO MODERN -->
+  <section class="style-gallery sigil-gallery" id="sigil-gallery">
+    <div class="frame">
+      <div class="style-gallery-head reveal">
+        <div><p class="eyebrow">NEO MODERN — BODY FLOW</p><h2>Explora Body Flow.</h2></div>
+        <p>Abstracción, sigilos y geometría corporal. Una interpretación contemporánea de líneas que siguen la forma humana.</p>
+      </div>
+
+      <div class="scroll-hint reveal"><span>DESLIZA</span><div></div><span>→</span></div>
+
+      <div class="photo-rail reveal">
+        <button class="portfolio-photo lightbox-trigger" data-src="https://images.pexels.com/photos/1993189/pexels-photo-1993189.jpeg?auto=compress&cs=tinysrgb&w=1600" data-alt="Body Flow 01"><img loading="lazy" src="https://images.pexels.com/photos/1993189/pexels-photo-1993189.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Body flow tattoo 01"><span>01</span></button>
+        <button class="portfolio-photo lightbox-trigger" data-src="https://images.pexels.com/photos/4750247/pexels-photo-4750247.jpeg?auto=compress&cs=tinysrgb&w=1600" data-alt="Body Flow 02"><img loading="lazy" src="https://images.pexels.com/photos/4750247/pexels-photo-4750247.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Body flow tattoo 02"><span>02</span></button>
+        <button class="portfolio-photo lightbox-trigger" data-src="https://images.pexels.com/photos/8349189/pexels-photo-8349189.jpeg?auto=compress&cs=tinysrgb&w=1600" data-alt="Body Flow 03"><img loading="lazy" src="https://images.pexels.com/photos/8349189/pexels-photo-8349189.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Body flow tattoo 03"><span>03</span></button>
+        <button class="portfolio-photo lightbox-trigger" data-src="https://images.pexels.com/photos/325152/pexels-photo-325152.jpeg?auto=compress&cs=tinysrgb&w=1600" data-alt="Body Flow 04"><img loading="lazy" src="https://images.pexels.com/photos/325152/pexels-photo-325152.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Body flow tattoo 04"><span>04</span></button>
+        <button class="portfolio-photo lightbox-trigger" data-src="https://images.pexels.com/photos/35554899/pexels-photo-35554899.jpeg?auto=compress&cs=tinysrgb&w=1600" data-alt="Body Flow 05"><img loading="lazy" src="https://images.pexels.com/photos/35554899/pexels-photo-35554899.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Body flow tattoo 05"><span>05</span></button>
+        <button class="portfolio-photo lightbox-trigger" data-src="https://images.pexels.com/photos/31669034/pexels-photo-31669034.jpeg?auto=compress&cs=tinysrgb&w=1600" data-alt="Body Flow 06"><img loading="lazy" src="https://images.pexels.com/photos/31669034/pexels-photo-31669034.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Body flow tattoo 06"><span>06</span></button>
+        <button class="portfolio-photo lightbox-trigger" data-src="https://images.pexels.com/photos/6593475/pexels-photo-6593475.jpeg?auto=compress&cs=tinysrgb&w=1600" data-alt="Body Flow 07"><img loading="lazy" src="https://images.pexels.com/photos/6593475/pexels-photo-6593475.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Body flow tattoo 07"><span>07</span></button>
+        <button class="portfolio-photo lightbox-trigger" data-src="https://images.pexels.com/photos/6593510/pexels-photo-6593510.jpeg?auto=compress&cs=tinysrgb&w=1600" data-alt="Body Flow 08"><img loading="lazy" src="https://images.pexels.com/photos/6593510/pexels-photo-6593510.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Body flow tattoo 08"><span>08</span></button>
+        <button class="portfolio-photo lightbox-trigger" data-src="https://images.pexels.com/photos/29464097/pexels-photo-29464097.jpeg?auto=compress&cs=tinysrgb&w=1600" data-alt="Body Flow 09"><img loading="lazy" src="https://images.pexels.com/photos/29464097/pexels-photo-29464097.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Body flow tattoo 09"><span>09</span></button>
+        <button class="portfolio-photo lightbox-trigger" data-src="https://images.pexels.com/photos/8349203/pexels-photo-8349203.jpeg?auto=compress&cs=tinysrgb&w=1600" data-alt="Body Flow 10"><img loading="lazy" src="https://images.pexels.com/photos/8349203/pexels-photo-8349203.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Body flow tattoo 10"><span>10</span></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- STUDIO -->
+  <section class="studio" id="estudio">
+    <div class="studio-image parallax"></div>
+    <div class="studio-content">
+      <div class="content-frame reveal">
+        <p class="eyebrow dark">04 — THE STUDIO</p>
+        <h2>Espacio para crear <span>con calma.</span></h2>
+        <p>
+          NOIR está pensado como un espacio de concentración. La conversación,
+          el diseño y el proceso tienen el mismo valor que el resultado.
+        </p>
+        <a href="#reserva" class="dark-button">CONOCER EL ESTUDIO →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOKING -->
+  <section class="booking" id="reserva">
+    <div class="frame booking-layout reveal">
+      <div class="booking-copy">
+        <p class="eyebrow dark">05 — BOOKING</p>
+        <h2>Tu próxima pieza <span>comienza aquí.</span></h2>
+        <p>Cuéntanos tu idea, estilo, tamaño y ubicación para comenzar el proceso.</p>
+      </div>
+
+      <form class="booking-form" id="bookingForm">
+        <div class="form-group"><label>Nombre</label><input required placeholder="Tu nombre"></div>
+        <div class="form-group"><label>Correo</label><input type="email" required placeholder="tu@email.com"></div>
+        <div class="form-group">
+          <label>Estilo</label>
+          <select required>
+            <option value="">Selecciona un estilo</option>
+            <option>Blackwork</option>
+            <option>Fine Line</option>
+            <option>Ornamental</option>
+            <option>Neo Modern / Body Flow</option>
+            <option>Otro / Consulta</option>
+          </select>
+        </div>
+        <div class="form-group"><label>Tu idea</label><textarea required placeholder="Cuéntanos qué tienes en mente..."></textarea></div>
+        <button>ENVIAR SOLICITUD →</button>
+        <p class="form-message" id="formMessage"></p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="frame footer-inner">
+    <div class="footer-brand"><strong>NOIR</strong><span>TATTOO STUDIO</span></div>
+    <div class="footer-info"><span>LIMA, PERÚ</span><span>BLACKWORK · FINE LINE · ORNAMENTAL · BODY FLOW</span></div>
+    <div class="footer-copy">© 2026 NOIR TATTOO STUDIO</div>
+  </div>
+</footer>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Cerrar">×</button>
+  <img id="lightboxImage" src="" alt="">
+  <p id="lightboxCaption"></p>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
