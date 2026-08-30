@@ -1,383 +1,1265 @@
-* { margin: 0; padding: 0; box-sizing: border-box; }
+/* =========================================================
+   NOIR TATTOO STUDIO
+   PALETA VISUAL 70 / 20 / 10
+   70% Negro
+   20% Marfil
+   10% Piel clara
+========================================================= */
 
-html { scroll-behavior: smooth; }
+/* Tipografías */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap');
 
-body {
-  background: #090909;
-  color: #f2f0eb;
-  font-family: Arial, Helvetica, sans-serif;
+
+/* =========================================================
+   CONFIGURACIÓN GENERAL
+========================================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+/* =========================================================
+   PALETA DE COLORES
+========================================================= */
 
 :root {
-  --black: #090909;
-  --soft-black: #111111;
-  --white: #f2f0eb;
-  --grey: #8b8b8b;
-  --light-bg: #e9e7e2;
-  --dark-text: #111111;
+
+  /* =====================================================
+     70% — NEGRO
+     Color principal de la identidad NOIR
+  ===================================================== */
+
+  --black: #0A0A0A;
+  --soft-black: #151515;
+  --black-secondary: #101010;
+  --black-light: #1B1B1B;
+
+
+  /* =====================================================
+     20% — MARFIL
+     Elegante, cálido y limpio
+  ===================================================== */
+
+  --ivory: #E6DED4;
+  --ivory-soft: #F0EAE3;
+  --grey: #9A938C;
+
+
+  /* =====================================================
+     10% — PIEL CLARA
+     Inspirado en el tono visual cálido y claro
+     que elegiste para la estética del sitio
+  ===================================================== */
+
+  --skin: #F4E7E0;
+  --skin-soft: #F8EFEB;
+
+
+  /* Textos */
+
+  --light-text: #F2F0EB;
+  --dark-text: #0A0A0A;
+
 }
+
+
+/* =========================================================
+   BODY
+   BASE PRINCIPAL: NEGRO
+========================================================= */
+
+body {
+  background: var(--black);
+  color: var(--light-text);
+
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+
+  font-weight: 300;
+
+  overflow-x: hidden;
+}
+
+
+/* =========================================================
+   TIPOGRAFÍA EDITORIAL
+   Solo para títulos importantes
+========================================================= */
+
+h1,
+h2,
+h3,
+.logo,
+.footer-logo {
+  font-family: "Cormorant Garamond", Georgia, serif;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
 
 .header {
+
   position: fixed;
+
   top: 0;
   left: 0;
+
   width: 100%;
   height: 85px;
+
   display: flex;
+
   align-items: center;
   justify-content: space-between;
+
   padding: 0 5%;
+
   z-index: 1000;
-  background: linear-gradient(to bottom, rgba(0,0,0,.7), transparent);
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(10, 10, 10, .95),
+      rgba(10, 10, 10, .65),
+      transparent
+    );
+
+  backdrop-filter: blur(4px);
+
   transition: .3s;
+
 }
 
-.logo { font-size: 24px; letter-spacing: 8px; font-weight: 500; }
 
-.nav { display: flex; gap: 35px; }
+/* LOGO */
+
+.logo {
+
+  color: var(--light-text);
+
+  font-size: 30px;
+
+  letter-spacing: 9px;
+
+  font-weight: 500;
+
+}
+
+
+/* NAVEGACIÓN */
+
+.nav {
+
+  display: flex;
+
+  gap: 35px;
+
+}
 
 .nav a {
-  color: var(--white);
+
+  color: var(--light-text);
+
   text-decoration: none;
-  font-size: 12px;
+
+  font-size: 10px;
+
   text-transform: uppercase;
-  letter-spacing: 2px;
+
+  letter-spacing: 2.5px;
+
   transition: .3s;
+
 }
 
-.nav a:hover { opacity: .5; }
+.nav a:hover {
+
+  color: var(--skin);
+
+}
+
+
+/* BOTÓN RESERVA */
 
 .booking-button {
+
   color: var(--black);
-  background: var(--white);
+
+  background: var(--ivory);
+
   padding: 14px 24px;
+
   text-decoration: none;
-  font-size: 11px;
+
+  font-size: 10px;
+
   letter-spacing: 2px;
+
+  text-transform: uppercase;
+
+  transition: .3s;
+
 }
 
-.menu-mobile { display: none; }
+.booking-button:hover {
+
+  background: var(--skin);
+
+}
+
+
+/* MENÚ MÓVIL */
+
+.menu-mobile {
+
+  display: none;
+
+}
+
+
+/* =========================================================
+   HERO
+   NEGRO = PARTE PRINCIPAL DEL 70%
+========================================================= */
 
 .hero {
+
   position: relative;
+
   height: 100vh;
+
   min-height: 700px;
+
   display: flex;
+
   align-items: center;
+
   padding: 0 8%;
+
   background-image: url("images/hero.jpg");
+
   background-size: cover;
+
   background-position: center;
-  background-color: #202020;
+
+  background-color: var(--black);
+
 }
+
+
+/* OSCURECER IMAGEN */
 
 .hero-overlay {
+
   position: absolute;
+
   inset: 0;
-  background: linear-gradient(90deg, rgba(0,0,0,.75), rgba(0,0,0,.2));
+
+  background:
+
+    linear-gradient(
+      90deg,
+      rgba(10, 10, 10, .92) 0%,
+      rgba(10, 10, 10, .65) 45%,
+      rgba(10, 10, 10, .15) 100%
+    );
+
 }
 
-.hero-content { position: relative; z-index: 2; max-width: 850px; }
 
-.hero-small { font-size: 11px; letter-spacing: 4px; color: #cfcfcf; }
+.hero-content {
+
+  position: relative;
+
+  z-index: 2;
+
+  max-width: 850px;
+
+}
+
+
+.hero-small {
+
+  font-size: 10px;
+
+  letter-spacing: 4px;
+
+  text-transform: uppercase;
+
+  color: var(--ivory);
+
+}
+
+
+/* TÍTULO PRINCIPAL */
 
 .hero h1 {
+
   margin-top: 25px;
-  font-family: Georgia, serif;
-  font-size: clamp(55px, 8vw, 130px);
+
+  font-size: clamp(70px, 9vw, 145px);
+
   font-weight: 400;
-  line-height: .9;
-  letter-spacing: -3px;
+
+  line-height: .82;
+
+  letter-spacing: -2px;
+
+  color: var(--light-text);
+
 }
+
 
 .hero p {
+
   margin-top: 35px;
-  max-width: 420px;
-  line-height: 1.7;
-  color: #c7c7c7;
+
+  max-width: 430px;
+
+  line-height: 1.8;
+
+  color: var(--ivory);
+
+  font-size: 14px;
+
 }
+
+
+/* BOTÓN HERO */
 
 .hero-button {
+
   display: inline-flex;
+
   gap: 30px;
+
   margin-top: 40px;
+
   padding-bottom: 12px;
-  border-bottom: 1px solid var(--white);
-  color: var(--white);
+
+  border-bottom: 1px solid var(--skin);
+
+  color: var(--light-text);
+
   text-decoration: none;
-  font-size: 11px;
-  letter-spacing: 2px;
+
+  font-size: 10px;
+
+  letter-spacing: 2.5px;
+
+  text-transform: uppercase;
+
+  transition: .3s;
+
 }
+
+.hero-button:hover {
+
+  color: var(--skin);
+
+}
+
+
+/* SCROLL */
 
 .hero-scroll {
+
   position: absolute;
+
   bottom: 40px;
+
   right: 5%;
-  font-size: 10px;
+
+  font-size: 9px;
+
   letter-spacing: 3px;
+
   writing-mode: vertical-rl;
+
+  color: var(--ivory);
+
 }
+
+
+/* =========================================================
+   MANIFESTO
+   NEGRO
+========================================================= */
 
 .manifesto {
+
   display: grid;
+
   grid-template-columns: 20% 1fr;
+
   gap: 50px;
+
   padding: 180px 10%;
+
+  background: var(--black);
+
 }
 
-.manifesto-number { color: var(--grey); font-size: 12px; letter-spacing: 3px; }
 
-.manifesto h2,
-.styles-intro h2,
-.gallery h2,
-.artists h2,
-.studio h2,
-.booking h2 {
-  font-family: Georgia, serif;
+.manifesto-number {
+
+  color: var(--skin);
+
+  font-size: 10px;
+
+  letter-spacing: 3px;
+
+}
+
+
+.manifesto h2 {
+
+  font-size: clamp(55px, 7vw, 110px);
+
   font-weight: 400;
-  line-height: .9;
+
+  line-height: .85;
+
+  color: var(--light-text);
+
 }
 
-.manifesto h2 { font-size: clamp(45px, 6vw, 100px); }
 
 .manifesto p {
-  max-width: 500px;
+
+  max-width: 520px;
+
   margin-top: 45px;
-  color: #aaa;
-  line-height: 1.8;
+
+  color: var(--grey);
+
+  line-height: 1.9;
+
 }
+
+
+/* =========================================================
+   ETIQUETAS DE SECCIÓN
+========================================================= */
 
 .section-label {
+
   display: block;
+
   margin-bottom: 25px;
-  font-size: 10px;
+
+  font-size: 9px;
+
   letter-spacing: 4px;
-  color: var(--grey);
+
+  text-transform: uppercase;
+
+  color: var(--skin);
+
 }
 
-.styles { padding-top: 100px; }
 
-.styles-intro { padding: 100px 10%; }
+/* =========================================================
+   ESTILOS
+========================================================= */
 
-.styles-intro h2,
-.gallery h2,
-.artists h2,
-.booking h2 {
-  font-size: clamp(50px, 7vw, 110px);
+.styles {
+
+  padding-top: 100px;
+
+  background: var(--black);
+
 }
+
+
+.styles-intro {
+
+  padding: 100px 10%;
+
+}
+
+
+.styles-intro h2 {
+
+  font-size: clamp(60px, 8vw, 120px);
+
+  font-weight: 400;
+
+  line-height: .85;
+
+}
+
+
+/* =========================================================
+   BLOQUES DE ESTILO
+========================================================= */
 
 .style-block {
+
   min-height: 850px;
+
   display: grid;
+
   grid-template-columns: 1fr 1fr;
+
 }
+
 
 .style-image {
+
   min-height: 600px;
+
   background-size: cover;
+
   background-position: center;
-  background-color: #1b1b1b;
+
+  background-color: var(--black-light);
+
 }
 
-.blackwork-image { background-image: url("images/blackwork-1.jpg"); }
-.fineline-image { background-image: url("images/fineline-1.jpg"); }
-.ornamental-image { background-image: url("images/ornamental-1.jpg"); }
+
+/* IMÁGENES */
+
+.blackwork-image {
+
+  background-image:
+    url("images/blackwork-1.jpg");
+
+}
+
+.fineline-image {
+
+  background-image:
+    url("images/fineline-1.jpg");
+
+}
+
+.ornamental-image {
+
+  background-image:
+    url("images/ornamental-1.jpg");
+
+}
+
+
+/* CONTENIDO */
 
 .style-content {
+
   display: flex;
+
   flex-direction: column;
+
   justify-content: center;
+
   padding: 12%;
+
 }
 
-.style-number { font-size: 12px; color: var(--grey); letter-spacing: 3px; }
+
+.style-number {
+
+  font-size: 10px;
+
+  color: var(--skin);
+
+  letter-spacing: 3px;
+
+}
+
 
 .style-content h3 {
+
   margin-top: 25px;
-  font-family: Georgia, serif;
-  font-size: clamp(55px, 6vw, 100px);
+
+  font-size: clamp(65px, 7vw, 110px);
+
   font-weight: 400;
+
+  line-height: .85;
+
 }
+
 
 .style-tags {
+
   margin-top: 25px;
-  font-size: 10px;
+
+  font-size: 9px;
+
   letter-spacing: 3px;
+
+  text-transform: uppercase;
+
   color: var(--grey);
+
 }
+
 
 .style-content p {
-  max-width: 400px;
+
+  max-width: 420px;
+
   margin-top: 35px;
-  line-height: 1.8;
-  color: #aaa;
+
+  line-height: 1.9;
+
+  color: var(--grey);
+
 }
+
 
 .style-content a {
+
   width: fit-content;
+
   margin-top: 40px;
+
   padding-bottom: 10px;
+
   border-bottom: 1px solid currentColor;
+
   color: inherit;
+
   text-decoration: none;
-  font-size: 11px;
+
+  font-size: 10px;
+
   letter-spacing: 2px;
+
+  text-transform: uppercase;
+
 }
 
-.fine-line { background: var(--light-bg); color: var(--dark-text); }
-.fine-line .style-content p { color: #555; }
-.ornamental { background: #141311; }
 
-.gallery { padding: 150px 5%; }
-.gallery-header { padding-left: 5%; margin-bottom: 70px; }
+/* =========================================================
+   BLACKWORK
+   NEGRO — PARTE DEL 70%
+========================================================= */
+
+.blackwork {
+
+  background: var(--black);
+
+  color: var(--light-text);
+
+}
+
+
+/* =========================================================
+   FINE LINE
+   MARFIL — PARTE DEL 20%
+========================================================= */
+
+.fine-line {
+
+  background: var(--ivory);
+
+  color: var(--dark-text);
+
+}
+
+
+.fine-line .style-number {
+
+  color: #7F7067;
+
+}
+
+
+.fine-line .style-tags {
+
+  color: #716961;
+
+}
+
+
+.fine-line .style-content p {
+
+  color: #5C554F;
+
+}
+
+
+/* =========================================================
+   ORNAMENTAL
+   NEGRO CON DETALLES PIEL
+========================================================= */
+
+.ornamental {
+
+  background: var(--soft-black);
+
+  color: var(--light-text);
+
+}
+
+
+.ornamental .style-number {
+
+  color: var(--skin);
+
+}
+
+
+/* =========================================================
+   GALERÍA
+   NEGRO
+========================================================= */
+
+.gallery {
+
+  padding: 150px 5%;
+
+  background: var(--black);
+
+}
+
+
+.gallery-header {
+
+  padding-left: 5%;
+
+  margin-bottom: 70px;
+
+}
+
+
+.gallery h2 {
+
+  font-size: clamp(60px, 8vw, 120px);
+
+  font-weight: 400;
+
+  line-height: .85;
+
+}
+
+
+/* GRID */
 
 .gallery-grid {
+
   display: grid;
+
   grid-template-columns: repeat(2, 1fr);
+
   gap: 20px;
+
 }
+
 
 .gallery-item {
+
   height: 600px;
+
   position: relative;
-  background: linear-gradient(135deg, #242424, #0b0b0b);
+
+  overflow: hidden;
+
+  background:
+
+    linear-gradient(
+      135deg,
+      var(--black-light),
+      var(--black)
+    );
+
 }
 
-.item-large, .item-wide { height: 750px; }
+
+.item-large,
+.item-wide {
+
+  height: 750px;
+
+}
+
+
+/* ETIQUETA GALERÍA */
 
 .gallery-item span {
+
   position: absolute;
+
   bottom: 30px;
+
   left: 30px;
-  font-size: 10px;
+
+  font-size: 9px;
+
   letter-spacing: 3px;
+
+  text-transform: uppercase;
+
+  color: var(--ivory);
+
 }
+
+
+/* =========================================================
+   ARTISTAS
+   NEGRO
+========================================================= */
 
 .artists {
+
   padding: 150px 10%;
-  background: #101010;
+
+  background: var(--black-secondary);
+
 }
 
-.artists-intro { margin-bottom: 80px; }
+
+.artists-intro {
+
+  margin-bottom: 80px;
+
+}
+
+
+.artists h2 {
+
+  font-size: clamp(60px, 8vw, 120px);
+
+  font-weight: 400;
+
+  line-height: .85;
+
+}
+
 
 .artists-grid {
+
   display: grid;
+
   grid-template-columns: repeat(3, 1fr);
+
   gap: 30px;
+
 }
+
 
 .artist-image {
+
   height: 500px;
-  background: linear-gradient(135deg, #333, #111);
+
+  background:
+
+    linear-gradient(
+      135deg,
+      var(--black-light),
+      var(--black)
+    );
+
 }
 
-.artist-card h3 { margin-top: 25px; font-size: 14px; letter-spacing: 2px; }
-.artist-card p { margin-top: 12px; font-size: 10px; color: var(--grey); letter-spacing: 2px; }
+
+.artist-card h3 {
+
+  margin-top: 25px;
+
+  font-family: "Inter", sans-serif;
+
+  font-size: 13px;
+
+  font-weight: 400;
+
+  letter-spacing: 2px;
+
+  text-transform: uppercase;
+
+}
+
+
+.artist-card p {
+
+  margin-top: 12px;
+
+  font-size: 9px;
+
+  color: var(--skin);
+
+  letter-spacing: 2px;
+
+  text-transform: uppercase;
+
+}
+
+
+/* =========================================================
+   STUDIO
+   MARFIL
+   Segunda gran zona del 20%
+========================================================= */
 
 .studio {
+
   display: grid;
+
   grid-template-columns: 1fr 1fr;
+
   min-height: 800px;
+
+  background: var(--ivory);
+
+  color: var(--dark-text);
+
 }
 
-.studio-image { background: linear-gradient(135deg, #333, #111); }
+
+.studio-image {
+
+  background:
+
+    linear-gradient(
+      135deg,
+      #D8CEC4,
+      #AFA69D
+    );
+
+}
+
 
 .studio-content {
+
   display: flex;
+
   flex-direction: column;
+
   justify-content: center;
+
   padding: 15%;
+
 }
 
-.studio h2 { font-size: clamp(55px, 6vw, 100px); }
 
-.studio p { margin-top: 35px; line-height: 1.8; color: var(--grey); }
+.studio h2 {
+
+  font-size: clamp(65px, 7vw, 110px);
+
+  font-weight: 400;
+
+  line-height: .85;
+
+}
+
+
+.studio p {
+
+  margin-top: 35px;
+
+  line-height: 1.9;
+
+  color: #5C554F;
+
+}
+
 
 .studio a {
+
   margin-top: 40px;
-  color: var(--white);
+
+  width: fit-content;
+
+  padding-bottom: 10px;
+
+  border-bottom: 1px solid var(--dark-text);
+
+  color: var(--dark-text);
+
   text-decoration: none;
-  font-size: 11px;
+
+  font-size: 10px;
+
   letter-spacing: 2px;
+
+  text-transform: uppercase;
+
 }
+
+
+/* =========================================================
+   RESERVA
+   PIEL CLARA — 10%
+========================================================= */
 
 .booking {
+
   padding: 150px 10%;
-  background: var(--light-bg);
+
+  background: var(--skin);
+
   color: var(--dark-text);
+
 }
 
-.booking-intro { margin-bottom: 80px; }
 
-.booking-form { max-width: 700px; }
+.booking h2 {
+
+  font-size: clamp(60px, 8vw, 120px);
+
+  font-weight: 400;
+
+  line-height: .85;
+
+}
+
+
+.booking-intro {
+
+  margin-bottom: 80px;
+
+}
+
+
+/* FORMULARIO */
+
+.booking-form {
+
+  max-width: 700px;
+
+}
+
 
 .form-group {
+
   display: flex;
+
   flex-direction: column;
+
   margin-bottom: 35px;
+
 }
 
-.form-group label { margin-bottom: 12px; font-size: 10px; letter-spacing: 3px; }
+
+.form-group label {
+
+  margin-bottom: 12px;
+
+  font-size: 9px;
+
+  letter-spacing: 3px;
+
+  text-transform: uppercase;
+
+}
+
 
 .form-group input,
 .form-group select,
 .form-group textarea {
+
   border: none;
-  border-bottom: 1px solid #777;
+
+  border-bottom: 1px solid rgba(10, 10, 10, .45);
+
   padding: 15px 0;
+
   background: transparent;
-  font-size: 16px;
+
+  color: var(--dark-text);
+
+  font-family: "Inter", sans-serif;
+
+  font-size: 15px;
+
   outline: none;
+
 }
 
-.form-group textarea { min-height: 150px; resize: vertical; }
+
+.form-group textarea {
+
+  min-height: 150px;
+
+  resize: vertical;
+
+}
+
+
+/* BOTÓN FORMULARIO */
 
 .booking button {
+
   margin-top: 25px;
+
   padding: 18px 35px;
+
   border: none;
-  background: var(--dark-text);
-  color: var(--white);
+
+  background: var(--black);
+
+  color: var(--ivory);
+
   cursor: pointer;
-  font-size: 11px;
+
+  font-size: 10px;
+
   letter-spacing: 2px;
+
+  text-transform: uppercase;
+
+  transition: .3s;
+
 }
+
+
+.booking button:hover {
+
+  background: var(--soft-black);
+
+  color: var(--skin);
+
+}
+
+
+/* =========================================================
+   FOOTER
+   NEGRO
+========================================================= */
 
 footer {
+
   display: flex;
+
   justify-content: space-between;
+
   padding: 50px 5%;
-  font-size: 10px;
+
+  background: var(--black);
+
+  font-size: 9px;
+
   letter-spacing: 2px;
+
+  text-transform: uppercase;
+
   color: var(--grey);
+
 }
 
-.footer-logo { color: var(--white); font-size: 18px; letter-spacing: 6px; }
+
+.footer-logo {
+
+  color: var(--ivory);
+
+  font-size: 24px;
+
+  letter-spacing: 7px;
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
 
 @media (max-width: 900px) {
-  .nav, .booking-button { display: none; }
+
+
+  /* HEADER */
+
+  .nav,
+  .booking-button {
+
+    display: none;
+
+  }
+
 
   .menu-mobile {
+
     display: block;
+
     border: none;
+
     background: transparent;
-    color: white;
+
+    color: var(--ivory);
+
     font-size: 25px;
+
   }
+
+
+  /* MANIFESTO */
 
   .manifesto {
+
     grid-template-columns: 1fr;
+
     padding: 120px 8%;
+
   }
 
-  .style-block { grid-template-columns: 1fr; }
-  .fine-line .style-content { order: 1; }
-  .fine-line .style-image { order: 2; }
-  .gallery-grid, .artists-grid, .studio { grid-template-columns: 1fr; }
-  .studio-image { min-height: 500px; }
+
+  /* ESTILOS */
+
+  .style-block {
+
+    grid-template-columns: 1fr;
+
+  }
+
+
+  .style-image {
+
+    min-height: 500px;
+
+  }
+
+
+  /* GALERÍA */
+
+  .gallery-grid {
+
+    grid-template-columns: 1fr;
+
+  }
+
+
+  /* ARTISTAS */
+
+  .artists-grid {
+
+    grid-template-columns: 1fr;
+
+  }
+
+
+  /* STUDIO */
+
+  .studio {
+
+    grid-template-columns: 1fr;
+
+  }
+
+
+  .studio-image {
+
+    min-height: 500px;
+
+  }
+
+
+  /* FOOTER */
 
   footer {
+
     flex-direction: column;
+
     gap: 25px;
+
   }
+
 }
