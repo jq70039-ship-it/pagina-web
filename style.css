@@ -1,103 +1,104 @@
 /* =========================================================
-   NOIR TATTOO STUDIO
-   PALETA VISUAL 70 / 20 / 10
-   70% Negro
-   20% Marfil
-   10% Piel clara
+   NOIR — TATTOO STUDIO
+   ESTILO EDITORIAL / FINE LINE / BLACKWORK
 ========================================================= */
-
-/* Tipografías */
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap');
 
 
 /* =========================================================
-   CONFIGURACIÓN GENERAL
+   FUENTES
+========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=Playfair+Display:wght@400;500&display=swap');
+
+
+/* =========================================================
+   RESET
 ========================================================= */
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--black);
+    color: var(--stone);
+    font-family: "DM Sans", Arial, sans-serif;
+    font-weight: 300;
+    overflow-x: hidden;
 }
 
 
 /* =========================================================
-   PALETA DE COLORES
+   PALETA NOIR — 70 / 20 / 10
 ========================================================= */
 
 :root {
 
-  /* =====================================================
-     70% — NEGRO
-     Color principal de la identidad NOIR
-  ===================================================== */
+    /* =====================================================
+       70% — BASE OSCURA
+    ===================================================== */
 
-  --black: #0A0A0A;
-  --soft-black: #151515;
-  --black-secondary: #101010;
-  --black-light: #1B1B1B;
+    --black: #11100F;
+    --soft-black: #1A1816;
+    --deep-black: #090909;
 
 
-  /* =====================================================
-     20% — MARFIL
-     Elegante, cálido y limpio
-  ===================================================== */
+    /* =====================================================
+       20% — PIEDRA / NEUTROS
+    ===================================================== */
 
-  --ivory: #E6DED4;
-  --ivory-soft: #F0EAE3;
-  --grey: #9A938C;
-
-
-  /* =====================================================
-     10% — PIEL CLARA
-     Inspirado en el tono visual cálido y claro
-     que elegiste para la estética del sitio
-  ===================================================== */
-
-  --skin: #F4E7E0;
-  --skin-soft: #F8EFEB;
+    --stone: #D8D3CE;
+    --stone-dark: #AAA39C;
+    --stone-light: #EEEAE6;
 
 
-  /* Textos */
+    /* =====================================================
+       10% — PIEL / ACENTO
+    ===================================================== */
 
-  --light-text: #F2F0EB;
-  --dark-text: #0A0A0A;
+    --skin: #D7AAA2;
+    --skin-light: #E6C6BF;
+
+
+    /* =====================================================
+       TEXTO
+    ===================================================== */
+
+    --dark-text: #11100F;
+    --light-text: #EEEAE6;
+
+
+    /* =====================================================
+       ESTRUCTURA
+    ===================================================== */
+
+    --container: 1280px;
+
+    --space-side: 7%;
+
+    --line: rgba(216, 211, 206, 0.18);
 
 }
 
 
 /* =========================================================
-   BODY
-   BASE PRINCIPAL: NEGRO
+   CONTENEDOR CENTRAL
+
+   Todo el contenido textual queda dentro de este marco.
+
+   Evita que los textos queden pegados a los bordes.
 ========================================================= */
 
-body {
-  background: var(--black);
-  color: var(--light-text);
-
-  font-family: "Inter", Arial, Helvetica, sans-serif;
-
-  font-weight: 300;
-
-  overflow-x: hidden;
-}
-
-
-/* =========================================================
-   TIPOGRAFÍA EDITORIAL
-   Solo para títulos importantes
-========================================================= */
-
-h1,
-h2,
-h3,
-.logo,
-.footer-logo {
-  font-family: "Cormorant Garamond", Georgia, serif;
+.container {
+    width: min(var(--container), 86%);
+    margin-left: auto;
+    margin-right: auto;
 }
 
 
@@ -107,341 +108,343 @@ h3,
 
 .header {
 
-  position: fixed;
+    position: fixed;
 
-  top: 0;
-  left: 0;
+    top: 0;
+    left: 0;
 
-  width: 100%;
-  height: 85px;
+    width: 100%;
 
-  display: flex;
+    height: 82px;
 
-  align-items: center;
-  justify-content: space-between;
+    z-index: 1000;
 
-  padding: 0 5%;
-
-  z-index: 1000;
-
-  background:
-    linear-gradient(
-      to bottom,
-      rgba(10, 10, 10, .95),
-      rgba(10, 10, 10, .65),
-      transparent
-    );
-
-  backdrop-filter: blur(4px);
-
-  transition: .3s;
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(9, 9, 9, 0.96),
+            rgba(9, 9, 9, 0.72),
+            transparent
+        );
 
 }
 
 
-/* LOGO */
+/* Contenedor interno del header */
+
+.header-inner {
+
+    width: min(var(--container), 86%);
+
+    height: 100%;
+
+    margin: auto;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+}
+
 
 .logo {
 
-  color: var(--light-text);
+    color: var(--stone-light);
 
-  font-size: 30px;
+    font-size: 22px;
 
-  letter-spacing: 9px;
+    font-weight: 400;
 
-  font-weight: 500;
+    letter-spacing: 9px;
+
+    text-decoration: none;
 
 }
 
 
-/* NAVEGACIÓN */
+/* =========================================================
+   NAVEGACIÓN
+========================================================= */
 
 .nav {
 
-  display: flex;
+    display: flex;
 
-  gap: 35px;
+    align-items: center;
+
+    gap: 32px;
 
 }
+
 
 .nav a {
 
-  color: var(--light-text);
+    color: var(--stone);
 
-  text-decoration: none;
+    text-decoration: none;
 
-  font-size: 10px;
+    text-transform: uppercase;
 
-  text-transform: uppercase;
+    font-size: 10px;
 
-  letter-spacing: 2.5px;
+    letter-spacing: 2px;
 
-  transition: .3s;
+    transition: 0.3s;
 
 }
+
 
 .nav a:hover {
 
-  color: var(--skin);
+    color: var(--skin);
 
 }
 
 
-/* BOTÓN RESERVA */
+/* =========================================================
+   BOTÓN RESERVA
+========================================================= */
 
 .booking-button {
 
-  color: var(--black);
+    display: inline-flex;
 
-  background: var(--ivory);
+    align-items: center;
 
-  padding: 14px 24px;
+    justify-content: center;
 
-  text-decoration: none;
+    padding: 13px 22px;
 
-  font-size: 10px;
+    background: var(--skin);
 
-  letter-spacing: 2px;
+    color: var(--deep-black);
 
-  text-transform: uppercase;
+    text-decoration: none;
 
-  transition: .3s;
+    text-transform: uppercase;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    transition: 0.3s;
 
 }
+
 
 .booking-button:hover {
 
-  background: var(--skin);
-
-}
-
-
-/* MENÚ MÓVIL */
-
-.menu-mobile {
-
-  display: none;
+    background: var(--skin-light);
 
 }
 
 
 /* =========================================================
    HERO
-   NEGRO = PARTE PRINCIPAL DEL 70%
 ========================================================= */
 
 .hero {
 
-  position: relative;
+    position: relative;
 
-  height: 100vh;
+    min-height: 100vh;
 
-  min-height: 700px;
+    display: flex;
 
-  display: flex;
+    align-items: center;
 
-  align-items: center;
+    background-image: url("images/hero.jpg");
 
-  padding: 0 8%;
+    background-size: cover;
 
-  background-image: url("images/hero.jpg");
-
-  background-size: cover;
-
-  background-position: center;
-
-  background-color: var(--black);
+    background-position: center;
 
 }
 
 
-/* OSCURECER IMAGEN */
+/* Oscurecimiento editorial */
 
 .hero-overlay {
 
-  position: absolute;
+    position: absolute;
 
-  inset: 0;
+    inset: 0;
 
-  background:
+    background:
 
-    linear-gradient(
-      90deg,
-      rgba(10, 10, 10, .92) 0%,
-      rgba(10, 10, 10, .65) 45%,
-      rgba(10, 10, 10, .15) 100%
-    );
+        linear-gradient(
+            90deg,
+            rgba(9, 9, 9, 0.88) 0%,
+            rgba(9, 9, 9, 0.64) 40%,
+            rgba(9, 9, 9, 0.08) 100%
+        );
 
 }
 
 
 .hero-content {
 
-  position: relative;
+    position: relative;
 
-  z-index: 2;
+    z-index: 2;
 
-  max-width: 850px;
+    width: min(var(--container), 86%);
+
+    margin: auto;
 
 }
 
 
 .hero-small {
 
-  font-size: 10px;
+    color: var(--skin);
 
-  letter-spacing: 4px;
+    font-size: 10px;
 
-  text-transform: uppercase;
+    letter-spacing: 4px;
 
-  color: var(--ivory);
+    text-transform: uppercase;
 
 }
 
 
-/* TÍTULO PRINCIPAL */
-
 .hero h1 {
 
-  margin-top: 25px;
+    max-width: 800px;
 
-  font-size: clamp(70px, 9vw, 145px);
+    margin-top: 25px;
 
-  font-weight: 400;
+    font-family: "Playfair Display", Georgia, serif;
 
-  line-height: .82;
+    font-size: clamp(60px, 8vw, 125px);
 
-  letter-spacing: -2px;
+    font-weight: 400;
 
-  color: var(--light-text);
+    line-height: 0.92;
+
+    letter-spacing: -2px;
+
+    color: var(--stone-light);
 
 }
 
 
 .hero p {
 
-  margin-top: 35px;
+    max-width: 430px;
 
-  max-width: 430px;
+    margin-top: 32px;
 
-  line-height: 1.8;
+    color: var(--stone-dark);
 
-  color: var(--ivory);
+    line-height: 1.8;
 
-  font-size: 14px;
+    font-size: 14px;
 
 }
 
 
-/* BOTÓN HERO */
+/* =========================================================
+   BOTÓN HERO
+========================================================= */
 
 .hero-button {
 
-  display: inline-flex;
+    display: inline-flex;
 
-  gap: 30px;
+    align-items: center;
 
-  margin-top: 40px;
+    gap: 25px;
 
-  padding-bottom: 12px;
+    margin-top: 42px;
 
-  border-bottom: 1px solid var(--skin);
+    padding-bottom: 12px;
 
-  color: var(--light-text);
+    border-bottom: 1px solid var(--skin);
 
-  text-decoration: none;
+    color: var(--stone-light);
 
-  font-size: 10px;
+    text-decoration: none;
 
-  letter-spacing: 2.5px;
+    font-size: 10px;
 
-  text-transform: uppercase;
+    letter-spacing: 2px;
 
-  transition: .3s;
+    text-transform: uppercase;
 
 }
+
 
 .hero-button:hover {
 
-  color: var(--skin);
-
-}
-
-
-/* SCROLL */
-
-.hero-scroll {
-
-  position: absolute;
-
-  bottom: 40px;
-
-  right: 5%;
-
-  font-size: 9px;
-
-  letter-spacing: 3px;
-
-  writing-mode: vertical-rl;
-
-  color: var(--ivory);
+    color: var(--skin);
 
 }
 
 
 /* =========================================================
    MANIFESTO
-   NEGRO
 ========================================================= */
 
 .manifesto {
 
-  display: grid;
+    padding: 160px 0;
 
-  grid-template-columns: 20% 1fr;
+}
 
-  gap: 50px;
 
-  padding: 180px 10%;
+.manifesto-grid {
 
-  background: var(--black);
+    width: min(var(--container), 86%);
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: 160px minmax(0, 800px);
+
+    gap: 80px;
 
 }
 
 
 .manifesto-number {
 
-  color: var(--skin);
+    color: var(--skin);
 
-  font-size: 10px;
+    font-size: 10px;
 
-  letter-spacing: 3px;
+    letter-spacing: 4px;
 
 }
 
 
 .manifesto h2 {
 
-  font-size: clamp(55px, 7vw, 110px);
+    font-family: "Playfair Display", Georgia, serif;
 
-  font-weight: 400;
+    font-size: clamp(45px, 6vw, 95px);
 
-  line-height: .85;
+    font-weight: 400;
 
-  color: var(--light-text);
+    line-height: 0.98;
+
+    color: var(--stone-light);
 
 }
 
 
 .manifesto p {
 
-  max-width: 520px;
+    max-width: 560px;
 
-  margin-top: 45px;
+    margin-top: 40px;
 
-  color: var(--grey);
+    color: var(--stone-dark);
 
-  line-height: 1.9;
+    line-height: 1.9;
 
 }
 
@@ -452,17 +455,17 @@ h3,
 
 .section-label {
 
-  display: block;
+    display: block;
 
-  margin-bottom: 25px;
+    margin-bottom: 24px;
 
-  font-size: 9px;
+    color: var(--skin);
 
-  letter-spacing: 4px;
+    font-size: 10px;
 
-  text-transform: uppercase;
+    letter-spacing: 4px;
 
-  color: var(--skin);
+    text-transform: uppercase;
 
 }
 
@@ -473,305 +476,325 @@ h3,
 
 .styles {
 
-  padding-top: 100px;
-
-  background: var(--black);
+    padding-top: 80px;
 
 }
 
 
 .styles-intro {
 
-  padding: 100px 10%;
+    width: min(var(--container), 86%);
+
+    margin: 0 auto 80px auto;
 
 }
 
 
 .styles-intro h2 {
 
-  font-size: clamp(60px, 8vw, 120px);
+    max-width: 850px;
 
-  font-weight: 400;
+    font-family: "Playfair Display", Georgia, serif;
 
-  line-height: .85;
+    font-size: clamp(50px, 7vw, 105px);
+
+    font-weight: 400;
+
+    line-height: 0.95;
 
 }
 
 
 /* =========================================================
-   BLOQUES DE ESTILO
+   BLOQUES DE ESTILOS
 ========================================================= */
 
 .style-block {
 
-  min-height: 850px;
+    min-height: 760px;
 
-  display: grid;
+    display: grid;
 
-  grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
 
 }
 
 
 .style-image {
 
-  min-height: 600px;
+    min-height: 650px;
 
-  background-size: cover;
+    background-size: cover;
 
-  background-position: center;
-
-  background-color: var(--black-light);
+    background-position: center;
 
 }
 
-
-/* IMÁGENES */
-
-.blackwork-image {
-
-  background-image:
-    url("images/blackwork-1.jpg");
-
-}
-
-.fineline-image {
-
-  background-image:
-    url("images/fineline-1.jpg");
-
-}
-
-.ornamental-image {
-
-  background-image:
-    url("images/ornamental-1.jpg");
-
-}
-
-
-/* CONTENIDO */
 
 .style-content {
 
-  display: flex;
+    display: flex;
 
-  flex-direction: column;
+    flex-direction: column;
 
-  justify-content: center;
-
-  padding: 12%;
+    justify-content: center;
 
 }
 
 
-.style-number {
+/* Marco interno para que el texto no quede pegado */
 
-  font-size: 10px;
+.style-content-inner {
 
-  color: var(--skin);
+    width: min(78%, 560px);
 
-  letter-spacing: 3px;
-
-}
-
-
-.style-content h3 {
-
-  margin-top: 25px;
-
-  font-size: clamp(65px, 7vw, 110px);
-
-  font-weight: 400;
-
-  line-height: .85;
-
-}
-
-
-.style-tags {
-
-  margin-top: 25px;
-
-  font-size: 9px;
-
-  letter-spacing: 3px;
-
-  text-transform: uppercase;
-
-  color: var(--grey);
-
-}
-
-
-.style-content p {
-
-  max-width: 420px;
-
-  margin-top: 35px;
-
-  line-height: 1.9;
-
-  color: var(--grey);
-
-}
-
-
-.style-content a {
-
-  width: fit-content;
-
-  margin-top: 40px;
-
-  padding-bottom: 10px;
-
-  border-bottom: 1px solid currentColor;
-
-  color: inherit;
-
-  text-decoration: none;
-
-  font-size: 10px;
-
-  letter-spacing: 2px;
-
-  text-transform: uppercase;
+    margin: auto;
 
 }
 
 
 /* =========================================================
    BLACKWORK
-   NEGRO — PARTE DEL 70%
 ========================================================= */
 
 .blackwork {
 
-  background: var(--black);
+    background: var(--deep-black);
 
-  color: var(--light-text);
+}
+
+
+.blackwork-image {
+
+    background-image: url("images/blackwork-1.jpg");
+
+}
+
+
+.blackwork .style-content {
+
+    background: var(--soft-black);
+
+}
+
+
+.blackwork .style-number {
+
+    color: var(--skin);
 
 }
 
 
 /* =========================================================
    FINE LINE
-   MARFIL — PARTE DEL 20%
 ========================================================= */
 
 .fine-line {
 
-  background: var(--ivory);
+    background: var(--stone-light);
 
-  color: var(--dark-text);
-
-}
-
-
-.fine-line .style-number {
-
-  color: #7F7067;
+    color: var(--dark-text);
 
 }
 
 
-.fine-line .style-tags {
+.fineline-image {
 
-  color: #716961;
+    background-image: url("images/fineline-1.jpg");
+
+}
+
+
+.fine-line .style-content {
+
+    background: var(--stone);
 
 }
 
 
 .fine-line .style-content p {
 
-  color: #5C554F;
+    color: #615B56;
+
+}
+
+
+.fine-line .style-tags {
+
+    color: #766E68;
 
 }
 
 
 /* =========================================================
    ORNAMENTAL
-   NEGRO CON DETALLES PIEL
 ========================================================= */
 
 .ornamental {
 
-  background: var(--soft-black);
-
-  color: var(--light-text);
+    background: #171513;
 
 }
 
 
-.ornamental .style-number {
+.ornamental-image {
 
-  color: var(--skin);
+    background-image: url("images/ornamental-1.jpg");
+
+}
+
+
+.ornamental .style-content {
+
+    background: #201D1A;
+
+}
+
+
+/* =========================================================
+   CONTENIDO ESTILOS
+========================================================= */
+
+.style-number {
+
+    font-size: 10px;
+
+    letter-spacing: 4px;
+
+    color: var(--stone-dark);
+
+}
+
+
+.style-content h3 {
+
+    margin-top: 25px;
+
+    font-family: "Playfair Display", Georgia, serif;
+
+    font-size: clamp(50px, 6vw, 90px);
+
+    font-weight: 400;
+
+    line-height: 0.95;
+
+}
+
+
+.style-tags {
+
+    margin-top: 25px;
+
+    font-size: 10px;
+
+    letter-spacing: 3px;
+
+    color: var(--stone-dark);
+
+    text-transform: uppercase;
+
+}
+
+
+.style-content p {
+
+    max-width: 420px;
+
+    margin-top: 32px;
+
+    line-height: 1.85;
+
+    color: var(--stone-dark);
+
+}
+
+
+.style-content a {
+
+    width: fit-content;
+
+    margin-top: 40px;
+
+    padding-bottom: 10px;
+
+    border-bottom: 1px solid currentColor;
+
+    color: inherit;
+
+    text-decoration: none;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
 
 }
 
 
 /* =========================================================
    GALERÍA
-   NEGRO
 ========================================================= */
 
 .gallery {
 
-  padding: 150px 5%;
-
-  background: var(--black);
+    padding: 150px 0;
 
 }
 
 
 .gallery-header {
 
-  padding-left: 5%;
+    width: min(var(--container), 86%);
 
-  margin-bottom: 70px;
+    margin: 0 auto 70px auto;
 
 }
 
 
 .gallery h2 {
 
-  font-size: clamp(60px, 8vw, 120px);
+    max-width: 900px;
 
-  font-weight: 400;
+    font-family: "Playfair Display", Georgia, serif;
 
-  line-height: .85;
+    font-size: clamp(50px, 7vw, 105px);
+
+    font-weight: 400;
+
+    line-height: 0.95;
 
 }
 
 
-/* GRID */
-
 .gallery-grid {
 
-  display: grid;
+    width: min(var(--container), 90%);
 
-  grid-template-columns: repeat(2, 1fr);
+    margin: auto;
 
-  gap: 20px;
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 20px;
 
 }
 
 
 .gallery-item {
 
-  height: 600px;
+    height: 600px;
 
-  position: relative;
+    position: relative;
 
-  overflow: hidden;
+    overflow: hidden;
 
-  background:
+    background-size: cover;
 
-    linear-gradient(
-      135deg,
-      var(--black-light),
-      var(--black)
-    );
+    background-position: center;
+
+    background-color: var(--soft-black);
 
 }
 
@@ -779,277 +802,290 @@ h3,
 .item-large,
 .item-wide {
 
-  height: 750px;
+    height: 720px;
 
 }
 
 
-/* ETIQUETA GALERÍA */
-
 .gallery-item span {
 
-  position: absolute;
+    position: absolute;
 
-  bottom: 30px;
+    bottom: 25px;
 
-  left: 30px;
+    left: 25px;
 
-  font-size: 9px;
+    padding: 8px 12px;
 
-  letter-spacing: 3px;
+    background: rgba(9, 9, 9, 0.72);
 
-  text-transform: uppercase;
+    color: var(--stone-light);
 
-  color: var(--ivory);
+    font-size: 9px;
+
+    letter-spacing: 3px;
 
 }
 
 
 /* =========================================================
    ARTISTAS
-   NEGRO
 ========================================================= */
 
 .artists {
 
-  padding: 150px 10%;
+    padding: 150px 0;
 
-  background: var(--black-secondary);
+    background: var(--soft-black);
+
+}
+
+
+.artists-inner {
+
+    width: min(var(--container), 86%);
+
+    margin: auto;
 
 }
 
 
 .artists-intro {
 
-  margin-bottom: 80px;
+    margin-bottom: 70px;
 
 }
 
 
 .artists h2 {
 
-  font-size: clamp(60px, 8vw, 120px);
+    font-family: "Playfair Display", Georgia, serif;
 
-  font-weight: 400;
+    font-size: clamp(50px, 7vw, 100px);
 
-  line-height: .85;
+    font-weight: 400;
 
 }
 
 
 .artists-grid {
 
-  display: grid;
+    display: grid;
 
-  grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
 
-  gap: 30px;
+    gap: 28px;
 
 }
 
 
 .artist-image {
 
-  height: 500px;
+    height: 500px;
 
-  background:
+    background-size: cover;
 
-    linear-gradient(
-      135deg,
-      var(--black-light),
-      var(--black)
-    );
+    background-position: center;
+
+    background-color: var(--black);
 
 }
 
 
 .artist-card h3 {
 
-  margin-top: 25px;
+    margin-top: 22px;
 
-  font-family: "Inter", sans-serif;
+    font-size: 12px;
 
-  font-size: 13px;
+    letter-spacing: 2px;
 
-  font-weight: 400;
-
-  letter-spacing: 2px;
-
-  text-transform: uppercase;
+    text-transform: uppercase;
 
 }
 
 
 .artist-card p {
 
-  margin-top: 12px;
+    margin-top: 10px;
 
-  font-size: 9px;
+    color: var(--skin);
 
-  color: var(--skin);
+    font-size: 10px;
 
-  letter-spacing: 2px;
-
-  text-transform: uppercase;
+    letter-spacing: 2px;
 
 }
 
 
 /* =========================================================
    STUDIO
-   MARFIL
-   Segunda gran zona del 20%
 ========================================================= */
 
 .studio {
 
-  display: grid;
+    display: grid;
 
-  grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
 
-  min-height: 800px;
-
-  background: var(--ivory);
-
-  color: var(--dark-text);
+    min-height: 780px;
 
 }
 
 
 .studio-image {
 
-  background:
+    background-size: cover;
 
-    linear-gradient(
-      135deg,
-      #D8CEC4,
-      #AFA69D
-    );
+    background-position: center;
+
+    background-color: var(--soft-black);
 
 }
 
 
 .studio-content {
 
-  display: flex;
+    display: flex;
 
-  flex-direction: column;
+    align-items: center;
 
-  justify-content: center;
+    background: var(--stone);
 
-  padding: 15%;
+    color: var(--dark-text);
+
+}
+
+
+.studio-content-inner {
+
+    width: min(72%, 550px);
+
+    margin: auto;
 
 }
 
 
 .studio h2 {
 
-  font-size: clamp(65px, 7vw, 110px);
+    font-family: "Playfair Display", Georgia, serif;
 
-  font-weight: 400;
+    font-size: clamp(50px, 6vw, 90px);
 
-  line-height: .85;
+    font-weight: 400;
+
+    line-height: 0.95;
 
 }
 
 
 .studio p {
 
-  margin-top: 35px;
+    margin-top: 30px;
 
-  line-height: 1.9;
+    line-height: 1.8;
 
-  color: #5C554F;
+    color: #5F5954;
 
 }
 
 
 .studio a {
 
-  margin-top: 40px;
+    display: inline-block;
 
-  width: fit-content;
+    margin-top: 35px;
 
-  padding-bottom: 10px;
+    padding-bottom: 10px;
 
-  border-bottom: 1px solid var(--dark-text);
+    border-bottom: 1px solid var(--dark-text);
 
-  color: var(--dark-text);
+    color: var(--dark-text);
 
-  text-decoration: none;
+    text-decoration: none;
 
-  font-size: 10px;
+    font-size: 10px;
 
-  letter-spacing: 2px;
+    letter-spacing: 2px;
 
-  text-transform: uppercase;
+    text-transform: uppercase;
 
 }
 
 
 /* =========================================================
    RESERVA
-   PIEL CLARA — 10%
 ========================================================= */
 
 .booking {
 
-  padding: 150px 10%;
+    padding: 150px 0;
 
-  background: var(--skin);
+    background: var(--skin);
 
-  color: var(--dark-text);
+    color: var(--dark-text);
 
 }
 
 
-.booking h2 {
+.booking-inner {
 
-  font-size: clamp(60px, 8vw, 120px);
+    width: min(var(--container), 86%);
 
-  font-weight: 400;
-
-  line-height: .85;
+    margin: auto;
 
 }
 
 
 .booking-intro {
 
-  margin-bottom: 80px;
+    max-width: 850px;
+
+    margin-bottom: 75px;
 
 }
 
 
-/* FORMULARIO */
+.booking h2 {
+
+    font-family: "Playfair Display", Georgia, serif;
+
+    font-size: clamp(50px, 7vw, 100px);
+
+    font-weight: 400;
+
+    line-height: 0.95;
+
+}
+
 
 .booking-form {
 
-  max-width: 700px;
+    max-width: 680px;
 
 }
 
 
 .form-group {
 
-  display: flex;
+    display: flex;
 
-  flex-direction: column;
+    flex-direction: column;
 
-  margin-bottom: 35px;
+    margin-bottom: 32px;
 
 }
 
 
 .form-group label {
 
-  margin-bottom: 12px;
+    margin-bottom: 12px;
 
-  font-size: 9px;
+    font-size: 10px;
 
-  letter-spacing: 3px;
+    letter-spacing: 3px;
 
-  text-transform: uppercase;
+    text-transform: uppercase;
 
 }
 
@@ -1058,208 +1094,275 @@ h3,
 .form-group select,
 .form-group textarea {
 
-  border: none;
+    border: none;
 
-  border-bottom: 1px solid rgba(10, 10, 10, .45);
+    border-bottom: 1px solid rgba(17, 16, 15, 0.45);
 
-  padding: 15px 0;
+    padding: 15px 0;
 
-  background: transparent;
+    background: transparent;
 
-  color: var(--dark-text);
+    color: var(--dark-text);
 
-  font-family: "Inter", sans-serif;
+    font-family: inherit;
 
-  font-size: 15px;
+    font-size: 15px;
 
-  outline: none;
+    outline: none;
 
 }
 
 
 .form-group textarea {
 
-  min-height: 150px;
+    min-height: 140px;
 
-  resize: vertical;
+    resize: vertical;
 
 }
 
 
-/* BOTÓN FORMULARIO */
-
 .booking button {
 
-  margin-top: 25px;
+    margin-top: 20px;
 
-  padding: 18px 35px;
+    padding: 18px 32px;
 
-  border: none;
+    border: none;
 
-  background: var(--black);
+    background: var(--black);
 
-  color: var(--ivory);
+    color: var(--stone-light);
 
-  cursor: pointer;
+    cursor: pointer;
 
-  font-size: 10px;
+    font-family: inherit;
 
-  letter-spacing: 2px;
+    font-size: 10px;
 
-  text-transform: uppercase;
+    letter-spacing: 2px;
 
-  transition: .3s;
+    text-transform: uppercase;
+
+    transition: 0.3s;
 
 }
 
 
 .booking button:hover {
 
-  background: var(--soft-black);
-
-  color: var(--skin);
+    background: var(--soft-black);
 
 }
 
 
 /* =========================================================
    FOOTER
-   NEGRO
 ========================================================= */
 
 footer {
 
-  display: flex;
+    width: 100%;
 
-  justify-content: space-between;
+    padding: 45px 0;
 
-  padding: 50px 5%;
+    background: var(--deep-black);
 
-  background: var(--black);
+}
 
-  font-size: 9px;
 
-  letter-spacing: 2px;
+.footer-inner {
 
-  text-transform: uppercase;
+    width: min(var(--container), 86%);
 
-  color: var(--grey);
+    margin: auto;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 30px;
+
+}
+
+
+footer {
+
+    color: var(--stone-dark);
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
 
 }
 
 
 .footer-logo {
 
-  color: var(--ivory);
+    color: var(--stone-light);
 
-  font-size: 24px;
+    font-size: 17px;
 
-  letter-spacing: 7px;
+    letter-spacing: 7px;
 
 }
 
 
 /* =========================================================
-   RESPONSIVE
+   MOBILE
 ========================================================= */
+
+.menu-mobile {
+
+    display: none;
+
+}
+
 
 @media (max-width: 900px) {
 
 
-  /* HEADER */
+    .nav,
+    .booking-button {
 
-  .nav,
-  .booking-button {
+        display: none;
 
-    display: none;
-
-  }
+    }
 
 
-  .menu-mobile {
+    .menu-mobile {
 
-    display: block;
+        display: block;
 
-    border: none;
+        border: none;
 
-    background: transparent;
+        background: transparent;
 
-    color: var(--ivory);
+        color: var(--stone-light);
 
-    font-size: 25px;
+        font-size: 24px;
 
-  }
-
-
-  /* MANIFESTO */
-
-  .manifesto {
-
-    grid-template-columns: 1fr;
-
-    padding: 120px 8%;
-
-  }
+    }
 
 
-  /* ESTILOS */
+    .manifesto-grid {
 
-  .style-block {
+        grid-template-columns: 1fr;
 
-    grid-template-columns: 1fr;
+        gap: 35px;
 
-  }
-
-
-  .style-image {
-
-    min-height: 500px;
-
-  }
+    }
 
 
-  /* GALERÍA */
+    .style-block {
 
-  .gallery-grid {
+        grid-template-columns: 1fr;
 
-    grid-template-columns: 1fr;
-
-  }
+    }
 
 
-  /* ARTISTAS */
+    .style-image {
 
-  .artists-grid {
+        min-height: 500px;
 
-    grid-template-columns: 1fr;
-
-  }
+    }
 
 
-  /* STUDIO */
+    .style-content {
 
-  .studio {
+        min-height: 600px;
 
-    grid-template-columns: 1fr;
-
-  }
+    }
 
 
-  .studio-image {
+    .style-content-inner {
 
-    min-height: 500px;
+        width: 82%;
 
-  }
+    }
 
 
-  /* FOOTER */
+    .fine-line .style-content {
 
-  footer {
+        order: 1;
 
-    flex-direction: column;
+    }
 
-    gap: 25px;
 
-  }
+    .fine-line .style-image {
+
+        order: 2;
+
+    }
+
+
+    .gallery-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .artists-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .studio {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .studio-image {
+
+        min-height: 500px;
+
+    }
+
+
+    .footer-inner {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+
+    .hero h1 {
+
+        font-size: 55px;
+
+    }
+
+
+    .manifesto,
+    .gallery,
+    .artists,
+    .booking {
+
+        padding-top: 100px;
+
+        padding-bottom: 100px;
+
+    }
+
+
+    .style-content {
+
+        min-height: 520px;
+
+    }
 
 }
