@@ -1,4 +1,23 @@
-const DEFAULT = {
+/* =========================
+   CONEXIÓN SUPABASE — NOIR
+========================= */
+
+const SUPABASE_URL = "https://kazdukaltcziaizqiobd.supabase.co";
+
+const SUPABASE_KEY = "sb_publishable_quZbWPkFptypIV83vqISNg_I47uRnBc";
+
+const SUPABASE_HEADERS = {
+  "apikey": SUPABASE_KEY,
+  "Authorization": `Bearer ${SUPABASE_KEY}`,
+  "Content-Type": "application/json"
+};
+
+
+/* =========================
+   DATOS PREDETERMINADOS
+========================= */
+
+const PREDETERMINADO = {
   works: [
     {id:"demo-1",title:"Botanical Silence",style:"FINE LINE",description:"Líneas suaves y composición orgánica.",image:""},
     {id:"demo-2",title:"Dark Anatomy",style:"BLACKWORK",description:"Contraste, sombra y presencia.",image:""},
@@ -14,10 +33,75 @@ const DEFAULT = {
   studio:{studioName:"NOIR Tattoo Studio",city:"",instagram:"",contact:"",studioDescription:""}
 };
 let data = JSON.parse(localStorage.getItem("noir_admin_data") || "null") || structuredClone(DEFAULT);
+let studioId = null;
 let currentFilter="ALL", pendingImage="", editingWorkId=null;
 
 const $=s=>document.querySelector(s), $$=s=>document.querySelectorAll(s);
-const save=()=>localStorage.setItem("noir_admin_data",JSON.stringify(data));
+const save = async () => {
+
+    // Mantener también una copia local
+    localStorage.setItem("noir_admin_data", JSON.stringify(data));
+
+    const studioData = {
+        name: data.studio.studioName,
+        city: data.studio.city,
+        instagram: data.studio.instagram,
+        contact: data.studio.contact,
+        description: data.studio.studioDescription
+    };
+
+    try {
+
+        let response;
+
+        // Si ya existe un registro, actualizarlo
+        if (studioId) {
+
+            response = await fetch(
+                `${SUPABASE_URL}/rest/v1/studio_content?id=eq.${studioId}`,
+                {
+                    method: "PATCH",
+                    headers: {
+                        ...SUPABASE_HEADERS,
+                        "Prefer": "return=representation"
+                    },
+                    body: JSON.stringify(studioData)
+                }
+            );
+
+        } else {
+
+            // Si todavía no existe, crear uno
+            response = await fetch(
+                `${SUPABASE_URL}/rest/v1/studio_content`,
+                {
+                    method: "POST",
+                    headers: {
+                        ...SUPABASE_HEADERS,
+                        "Prefer": "return=representation"
+                    },
+                    body: JSON.stringify(studioData)
+                }
+            );
+
+            const result = await response.json();
+
+            if (result && result[0]) {
+                studioId = result[0].id;
+            }
+        }
+
+        if (!response.ok) {
+            throw new Error("Error al guardar en Supabase");
+        }
+
+        console.log("Información guardada en Supabase");
+
+    } catch (error) {
+
+        console.error("Error:", error);
+    }
+};
 const toast=msg=>{const t=$("#toast");t.textContent=msg;t.classList.add("show");setTimeout(()=>t.classList.remove("show"),2200)}
 const esc=s=>String(s||"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]));
 
