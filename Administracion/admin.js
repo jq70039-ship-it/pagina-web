@@ -43,11 +43,11 @@ const save = async () => {
     localStorage.setItem("noir_admin_data", JSON.stringify(data));
 
     const studioData = {
-        name: data.studio.studioName,
-        city: data.studio.city,
-        instagram: data.studio.instagram,
-        contact: data.studio.contact,
-        description: data.studio.studioDescription
+    name: data.studio.studioName,
+    city: data.studio.city,
+    Instagram: data.studio.instagram,
+    contact: data.studio.contact,
+    description: data.studio.studioDescription
     };
 
     try {
