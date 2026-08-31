@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NOIR — Admin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+  <div class="login-screen" id="loginScreen">
+    <div class="login-card">
+      <div class="login-mark">N</div>
+      <p class="eyebrow">PRIVATE MANAGEMENT</p>
+      <h1>NOIR<br><em>Admin.</em></h1>
+      <p class="login-copy">Gestiona la identidad visual, estilos, imágenes y contenido de tu estudio desde un solo lugar.</p>
+      <label>Acceso de administrador</label>
+      <input id="adminName" type="text" placeholder="Tu nombre">
+      <button id="enterAdmin">Entrar al panel <span>→</span></button>
+      <small>Modo local de demostración · tus cambios se guardan en este navegador.</small>
+    </div>
+  </div>
+
+  <div class="app hidden" id="app">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-line"></div>
+        <div>
+          <strong>NOIR</strong>
+          <span>TATTOO STUDIO</span>
+        </div>
+      </div>
+
+      <nav>
+        <button class="nav-link active" data-view="dashboard"><span>01</span> Dashboard</button>
+        <button class="nav-link" data-view="gallery"><span>02</span> Galería</button>
+        <button class="nav-link" data-view="styles"><span>03</span> Estilos</button>
+        <button class="nav-link" data-view="artists"><span>04</span> Artistas</button>
+        <button class="nav-link" data-view="studio"><span>05</span> Studio</button>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <button class="utility" id="exportData">Exportar contenido</button>
+        <label class="utility upload-label">Importar contenido<input type="file" id="importData" accept=".json"></label>
+        <button class="utility danger" id="resetData">Restablecer demo</button>
+        <a class="view-site" href="../index.html">Ver NOIR <span>↗</span></a>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow" id="sectionEyebrow">CONTROL ROOM</p>
+          <h2 id="pageTitle">Bienvenido a NOIR.</h2>
+        </div>
+        <div class="admin-user">
+          <span id="adminInitial">A</span>
+          <div><strong id="adminDisplay">Administrador</strong><small>Propietario</small></div>
+        </div>
+      </header>
+
+      <!-- DASHBOARD -->
+      <section class="view active" id="dashboard">
+        <div class="hero-admin">
+          <div>
+            <p class="eyebrow">YOUR STUDIO, YOUR CONTROL</p>
+            <h1>Todo el universo<br><em>NOIR</em> en un solo lugar.</h1>
+            <p>Actualiza tu portafolio, organiza imágenes y modifica la información del estudio sin tocar el código.</p>
+            <button class="primary" data-go="gallery">Gestionar galería <span>→</span></button>
+          </div>
+          <div class="hero-stat">
+            <span id="statImages">0</span>
+            <small>IMÁGENES ACTIVAS</small>
+          </div>
+        </div>
+
+        <div class="stats-grid">
+          <article><span class="stat-label">FINE LINE</span><strong id="fineCount">0</strong><small>obras</small></article>
+          <article><span class="stat-label">BLACKWORK</span><strong id="blackCount">0</strong><small>obras</small></article>
+          <article><span class="stat-label">ORNAMENTAL</span><strong id="ornamentalCount">0</strong><small>obras</small></article>
+          <article><span class="stat-label">BODY FLOW</span><strong id="bodyCount">0</strong><small>obras</small></article>
+        </div>
+
+        <div class="dashboard-grid">
+          <section class="panel">
+            <div class="panel-head"><div><span class="eyebrow">RECENT WORK</span><h3>Últimas obras</h3></div><button class="text-btn" data-go="gallery">Ver galería →</button></div>
+            <div id="recentWorks" class="recent-list"></div>
+          </section>
+          <section class="panel note-panel">
+            <span class="eyebrow">NOIR PRINCIPLE</span>
+            <h3>El detalle también es parte del diseño.</h3>
+            <p>La administración mantiene la misma filosofía visual de NOIR: menos ruido, más intención.</p>
+            <div class="palette-mini"><i></i><i></i><i></i><i></i></div>
+          </section>
+        </div>
+      </section>
+
+      <!-- GALLERY -->
+      <section class="view" id="gallery">
+        <div class="view-actions">
+          <div class="filters" id="styleFilters">
+            <button class="filter active" data-filter="ALL">Todo</button>
+            <button class="filter" data-filter="FINE LINE">Fine Line</button>
+            <button class="filter" data-filter="BLACKWORK">Blackwork</button>
+            <button class="filter" data-filter="ORNAMENTAL">Ornamental</button>
+            <button class="filter" data-filter="BODY FLOW">Body Flow</button>
+          </div>
+          <button class="primary" id="openAddWork">+ Agregar obra</button>
+        </div>
+        <div id="galleryAdminGrid" class="admin-gallery-grid"></div>
+      </section>
+
+      <!-- STYLES -->
+      <section class="view" id="styles">
+        <div id="stylesAdminList" class="style-admin-list"></div>
+      </section>
+
+      <!-- ARTISTS -->
+      <section class="view" id="artists">
+        <div class="empty-state">
+          <span>04</span><h3>Artistas de NOIR</h3>
+          <p>Esta sección está preparada para que agregues perfiles de artistas, especialidades, fotografías y enlaces.</p>
+          <button class="primary" id="artistDemo">Próximamente</button>
+        </div>
+      </section>
+
+      <!-- STUDIO -->
+      <section class="view" id="studio">
+        <div class="settings-card">
+          <div><span class="eyebrow">STUDIO INFORMATION</span><h3>Información pública</h3></div>
+          <form id="studioForm">
+            <div class="form-grid">
+              <label>Nombre del estudio<input name="studioName" placeholder="NOIR Tattoo Studio"></label>
+              <label>Ciudad<input name="city" placeholder="Tu ciudad"></label>
+              <label>Instagram<input name="instagram" placeholder="@tuinstagram"></label>
+              <label>Contacto<input name="contact" placeholder="+00 000 000 000"></label>
+            </div>
+            <label>Descripción<textarea name="studioDescription" rows="5" placeholder="La historia y esencia de NOIR..."></textarea></label>
+            <button class="primary" type="submit">Guardar información</button>
+          </form>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- MODAL WORK -->
+  <div class="modal hidden" id="workModal">
+    <div class="modal-card">
+      <button class="close-modal" data-close="workModal">×</button>
+      <div class="modal-head"><span class="eyebrow">GALLERY EDITOR</span><h2 id="modalTitle">Agregar obra</h2></div>
+      <form id="workForm">
+        <input type="hidden" name="id">
+        <div class="upload-box" id="uploadBox">
+          <input type="file" id="workImage" accept="image/*">
+          <div id="uploadPreview"><span>+</span><strong>Seleccionar fotografía</strong><small>JPG, PNG o WEBP</small></div>
+        </div>
+        <div class="form-grid">
+          <label>Título<input name="title" required placeholder="Nombre de la obra"></label>
+          <label>Estilo
+            <select name="style">
+              <option>FINE LINE</option><option>BLACKWORK</option><option>ORNAMENTAL</option><option>BODY FLOW</option>
+            </select>
+          </label>
+        </div>
+        <label>Descripción<textarea name="description" rows="4" placeholder="Describe la pieza, técnica o inspiración..."></textarea></label>
+        <div class="modal-actions"><button type="button" class="secondary" data-close="workModal">Cancelar</button><button class="primary" type="submit">Guardar obra</button></div>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL STYLE -->
+  <div class="modal hidden" id="styleModal">
+    <div class="modal-card">
+      <button class="close-modal" data-close="styleModal">×</button>
+      <div class="modal-head"><span class="eyebrow">STYLE EDITOR</span><h2>Editar estilo</h2></div>
+      <form id="styleForm">
+        <input type="hidden" name="styleKey">
+        <label>Nombre<input name="name" required></label>
+        <label>Descripción<textarea name="description" rows="6"></textarea></label>
+        <div class="modal-actions"><button type="button" class="secondary" data-close="styleModal">Cancelar</button><button class="primary" type="submit">Guardar cambios</button></div>
+      </form>
+    </div>
+  </div>
+
+  <div class="toast" id="toast">Cambios guardados.</div>
+  <script src="admin.js"></script>
+</body>
+</html>
